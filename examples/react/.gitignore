@@ -1,0 +1,5 @@
+node_modules/
+
+LocalModel.ts
+LocalComponent.tsx
+LocalApp.tsx
