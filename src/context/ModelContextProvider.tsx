@@ -1,9 +1,9 @@
 import { axios, AxiosCoreDefaults, AxiosInstance, defaultAxios, Model } from "@edge-effect/model-js";
 import { AxiosResponse, HttpStatusCode } from "axios";
 import React, { useCallback, useMemo, useRef } from "react";
-import { Authorization } from "src/auth/Authorization";
-import { ModelEventListener } from "src/listener/BaseListener";
-import { sleep } from "src/utils/Utils";
+import { Authorization } from "../auth/Authorization";
+import { ModelEventListener } from "../listener/BaseListener";
+import { sleep } from "../utils/Utils";
 
 // custom axios
 export const ignoreEventFlowAxios = axios.create(); // ignore intercept case axios
