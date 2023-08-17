@@ -1,12 +1,14 @@
 {
     "compilerOptions": {
-        "jsx": "react",
+        "jsx": "react-jsx",
         "module": "commonjs",
+        "lib": ["dom", "dom.iterable", "esnext"],
         "declaration": true,
         "removeComments": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
         "target": "es2017",
         "sourceMap": false,
         "outDir": "./dist",

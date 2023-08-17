@@ -1,6 +1,6 @@
 {
     "name": "@edge-effect/react-model-js",
-    "version": "0.1.0",
+    "version": "0.9.13",
     "description": "request / response model library based axios",
     "keywords": [
         "request",
@@ -37,12 +37,12 @@
         "@types/react": "^18.2.13",
         "@types/react-dom": "^18.2.6",
         "eslint": "^8.42.0",
-        "react": "17.0.0",
+        "react": "^18.2.0",
         "typescript": "^5.1.3"
     },
     "peerDependencies": {
-        "@edge-effect/model-js": ">=1.2.2 <2.0.0",
-        "react": ">=17.0.0 || >=18.0.0"
+        "@edge-effect/model-js": ">=1.2.6 <2.0.0",
+        "react": ">=17.0.0 <18.2.0"
     },
     "license": "MIT License"
 }
