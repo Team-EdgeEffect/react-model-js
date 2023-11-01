@@ -1,4 +1,5 @@
-import { ErrorResponse, HttpStatusCode } from "@edge-effect/model-js";
+import { ErrorResponse } from "@edge-effect/model-js";
+import { HttpStatusCode } from "axios";
 
 export const isResponseUserError = (object: any): object is ErrorResponse => {
     if (object instanceof ErrorResponse) {

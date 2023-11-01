@@ -75,6 +75,7 @@ function DetailApp() {
                 (error) => {
                     try {
                         let withIntercept = false;
+                        withIntercept = false;
                         const httpStatus = error.response.status;
                         // @TODO update pkg
                         // switch (httpStatus) {

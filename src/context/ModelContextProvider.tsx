@@ -1,5 +1,5 @@
-import { axios, AxiosCoreDefaults, AxiosInstance, defaultAxios, Model } from "@edge-effect/model-js";
-import { AxiosResponse, HttpStatusCode } from "axios";
+import { axios, AxiosCoreDefaults, defaultAxios, Model } from "@edge-effect/model-js";
+import { AxiosRequestHeaders, AxiosInstance, AxiosResponse, HttpStatusCode } from "axios";
 import React, { useCallback, useMemo, useRef } from "react";
 import { Authorization } from "../auth/Authorization";
 import { ModelEventListener } from "../listener/BaseListener";
@@ -25,6 +25,7 @@ class ModelContextProviderConfig {
     public tokenRefresh: ModelEventListener<OnTokenRefresh> = new ModelEventListener();
 
     constructor() {
+        this.authorization = null;
         this.setAuthorization(null);
     }
 
@@ -125,7 +126,7 @@ export const ModelContextProvider = (props: ModelContextProviderProps): JSX.Elem
 
                                     if (newAuthorization) {
                                         // retry
-                                        error.config.headers = { ...error.config.headers };
+                                        error.config.headers = { ...error.config.headers } as AxiosRequestHeaders;
                                         error.config.headers.Authorization = (newAuthorization as Authorization).toString();
                                         try {
                                             newResponse = await ignoreEventFlowAxios.request(error.config);
@@ -157,7 +158,7 @@ export const ModelContextProvider = (props: ModelContextProviderProps): JSX.Elem
                                     const newAuthorization = config.current.getAuthorization();
                                     if (newAuthorization) {
                                         // retry
-                                        error.config.headers = { ...error.config.headers };
+                                        error.config.headers = { ...error.config.headers } as AxiosRequestHeaders;
                                         error.config.headers.Authorization = newAuthorization.toString();
                                         try {
                                             newResponse = await ignoreEventFlowAxios.request(error.config);
