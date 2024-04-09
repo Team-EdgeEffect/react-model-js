@@ -74,19 +74,6 @@ export const ModelContextProvider = (props: ModelContextProviderProps): JSX.Elem
         models.current.push(model);
     }, []);
 
-    // const setAuthorization = useCallback((authorization: Authorization | null) => {
-    //     if (authorization) {
-    //         config.current.setAuthorization(authorization);
-    //         const authorizationString = `${authorization.code} ${authorization.token}`;
-    //         defaultAxios.defaults.headers.common["Authorization"] = authorizationString;
-    //         ignoreEventFlowAxios.defaults.headers.common["Authorization"] = authorizationString;
-    //     } else {
-    //         config.current.setAuthorization(null);
-    //         defaultAxios.defaults.headers.common["Authorization"] = null;
-    //         ignoreEventFlowAxios.defaults.headers.common["Authorization"] = null;
-    //     }
-    // }, []);
-
     const getModel = useCallback(<T extends Model>(target: new () => T): T => {
         const found = models.current.find((model) => {
             return model.constructor === target;
