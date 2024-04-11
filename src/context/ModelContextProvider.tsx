@@ -1,3 +1,5 @@
+"use client";
+
 import { axios, AxiosCoreDefaults, defaultAxios, Model } from "@edge-effect/model-js";
 import { AxiosRequestHeaders, AxiosInstance, AxiosResponse, HttpStatusCode } from "axios";
 import React, { useCallback, useMemo, useRef } from "react";

@@ -1,3 +1,5 @@
+"use client";
+
 import { Model } from "@edge-effect/model-js";
 import { useModelContext } from "../context/ModelContextProvider";
 
